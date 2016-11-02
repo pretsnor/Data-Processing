@@ -1,0 +1,1 @@
+"A branch is a copy of a project in which you can work and develop. When you're happy with the result, you can merge the branch to the master branch to publish your development work. In this way, multiple people can work on the same project, merging their work in the end" 
