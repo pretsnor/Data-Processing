@@ -381,9 +381,15 @@
 20161106,61
 20161107,42
 		</textarea>
-		<h1> Temperaturen meetcentrum De Bilt (november 2015 - november 2016) </h1> 
+		<div id="title">
+			<h1> Temperaturen meetcentrum De Bilt (november 2015 - november 2016) </h1> 
+		</div>
 		
-		<canvas id="weather_canvas" width = 800 height = 500></canvas>
+		<div id = "container">
+			<canvas id="crosshair" width = 800 height = 500></canvas>
+			<canvas id="weather_canvas" width = 800 height = 500></canvas>
+		<div>	
+		<img src = "clouds.png" alt = "wolkjes" width = 100%>
 
 		<!-- link to javascript -->
 		<script src="weather.js"></script>

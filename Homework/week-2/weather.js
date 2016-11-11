@@ -159,3 +159,91 @@ ctx.beginPath();
 	ctx.moveTo(offset,zeroDegrees);
 	ctx.lineTo(width - offset, zeroDegrees);
 	ctx.stroke();
+
+
+
+/////  CROSSHAIR STUFF
+var crossCanvas = document.getElementById("crosshair");
+var cross = crossCanvas.getContext("2d");
+
+crossCanvas.addEventListener("mousemove", function(event){
+	// get mouse coordinates
+	var x = event.pageX - crossCanvas.offsetLeft;
+
+    // reverse transform to get the day instead of canvas coordinates
+    var backTransform = createTransform(xRange, dateDomain);
+    var day = parseInt(backTransform(x));
+    
+    // get temp on that day and transform to canvas  y coord
+	var tempOnDay = temps[day - 1];
+	var y = transformTemperatures(tempOnDay);
+    
+    // clear last cross
+    cross.clearRect(0, 0, crossCanvas.width, crossCanvas.height);       
+    
+    // draw cross and circle if mouse is in graph area
+    if (x > offset && y < transformTemperatures(begin_y)) {
+    	
+    	// cross
+    	cross.beginPath();
+	    cross.moveTo(offset,y);
+	    cross.lineTo(width,y);
+	    cross.moveTo(x -1,0);
+	    cross.lineTo(x -1,transformTemperatures(begin_y));
+	    cross.strokeStyle = "black";
+	    cross.lineWidth = 1;
+	    cross.stroke();   
+	    cross.closePath();
+
+	    // circle
+	    cross.beginPath();
+	    cross.arc(x - 1,y,5,2 * Math.PI, false);
+	    cross.lineWidth = 2;
+	    cross.stroke();
+	    cross.closePath(); 
+
+	    // get current temperature as text
+	    var txt = tempOnDay/10 + " \xB0C";
+	    var textWidth = cross.measureText(txt).width;
+	    
+	    
+	    // draw rectangle 
+	    var rectWidth = textWidth + 10;
+	    var rectHeight = 23;
+	    cross.fillStyle = "black";
+	    cross.fillRect((x/2) - 5, y , rectWidth, - rectHeight);
+	    cross.stroke();
+
+	    // display temperature text
+	    var displayTempOffset = 5;
+	    cross.fillStyle = "white";
+	    cross.font = "15px sans-serif"
+	    cross.fillText(txt, x / 2, y - displayTempOffset);
+
+	    // get current date as text
+	    var currentDate = new Date(dates[day - 1]);
+	    var dateTxt = currentDate.getDate() + "-" + currentDate.getMonth() + "-" + currentDate.getFullYear();
+	    
+	    var textWidth = cross.measureText(dateTxt).width;
+
+	    // draw rectangle 
+	    var boxPadding = 5;
+	    rectWidth = textWidth + (2*boxPadding);
+	    rectHeight = 15 + boxPadding;
+	    cross.fillStyle = "black";
+	    cross.fillRect(x - (textWidth / 2) - boxPadding, transformTemperatures(begin_y), rectWidth, - rectHeight);
+	    cross.stroke();
+
+	    // display temperature text
+	   
+	    cross.fillStyle = "white";
+	    cross.font = "15px sans-serif"
+	    cross.fillText(dateTxt, x - (textWidth / 2), transformTemperatures(begin_y) - boxPadding);
+    }
+    
+
+    
+})
+
+
+
