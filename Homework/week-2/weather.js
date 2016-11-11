@@ -46,8 +46,8 @@ function createTransform(domain, range){
 
 // ranges (takes offset into account)
 var offset = 100;
-var width = 900;
-var height = 600;
+var width = 800;
+var height = 500;
 var xRange = [0 + offset, width - offset];
 var yRange = [height - offset, 0 + offset];
 
