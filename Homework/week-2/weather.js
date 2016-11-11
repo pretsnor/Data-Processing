@@ -222,7 +222,7 @@ crossCanvas.addEventListener("mousemove", function(event){
 
 	    // get current date as text
 	    var currentDate = new Date(dates[day - 1]);
-	    var dateTxt = currentDate.getDate() + "-" + currentDate.getMonth() + "-" + currentDate.getFullYear();
+	    var dateTxt = currentDate.getDate() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getFullYear();
 	    
 	    var textWidth = cross.measureText(dateTxt).width;
 
