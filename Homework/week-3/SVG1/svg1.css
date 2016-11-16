@@ -1,0 +1,34 @@
+/*******
+svg1.css
+
+Misha Paauw
+10054154
+
+Data Processing 
+Minor Programmeren
+Universiteit van Amsterdam
+16 - 11 - 2016
+
+css styling cvg map europe
+
+********/
+
+
+
+/* continent color */
+.landxx {
+	fill: grey;
+}
+
+/* country colors */
+#nl {
+	fill: orange;
+}
+
+#es {
+	fill: yellow;
+}
+
+#ch {
+	fill: blue;
+}
