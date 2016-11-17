@@ -1,0 +1,151 @@
+/*******
+svg2.css
+
+Misha Paauw
+10054154
+
+Data Processing 
+Minor Programmeren
+Universiteit van Amsterdam
+16 - 11 - 2016
+
+css styling svg map of the world
+
+********/
+
+/*
+ * Circles around small countries
+ *
+ * Change opacity to 1 to display all circles.
+ *
+ */
+.circlexx
+{
+   opacity:0;
+   fill:#e0e0e0;
+   stroke:#000000;
+   stroke-width:0.5;
+}
+
+/*
+ * Smaller circles around French DOMs and Chinese SARs
+ *
+ * Change opacity to 1 to display all subnational circles.
+ *
+ */
+.subxx
+{
+   opacity:0;
+   stroke-width:0.3;
+}
+
+/*
+ * Circles around small, unrecognized countries
+ *
+ * Change opacity to 1 to display all circles.
+ *
+ */
+.unxx
+{
+   opacity:0;
+   fill:#e0e0e0;
+   stroke:#000000;
+   stroke-width:0.3;
+}
+
+/*
+ * Circles around small countries, but with no permanent residents 
+ *
+ * Change opacity to 1 to display all circles.
+ *
+ */
+.noxx
+{
+   opacity:0;
+   stroke:#000000;
+   stroke-width:0.5;
+}
+
+/*
+ * land
+ */
+
+.landxx
+{
+   stroke:#ffffff;
+   stroke-width:0.5;
+   fill-rule:evenodd;
+}
+
+
+/*
+ * Styles for coastlines of islands with no borders
+ */
+
+.coastxx
+{
+   stroke:#ffffff;
+   stroke-width:0.3;
+   fill-rule:evenodd;
+}
+
+
+
+/*
+ * Styles for nations with limited recognition
+ */
+
+.limitxx
+{
+   stroke:#ffffff;
+   stroke-width:0;
+   fill-rule:evenodd;
+}
+
+
+/*
+ * Styles for nations with no permanent population.
+ */
+.antxx
+{
+   stroke:#ffffff;
+   stroke-width:0;
+   fill-rule:evenodd;
+}
+
+
+/*
+ * Ocean
+ */
+.oceanxx
+{
+   opacity: 1;
+   color: #b2b2ff;
+   fill:#b2b2ff;
+   stroke:#000;
+   stroke-width:0.5;
+   stroke-miterlimit:1;
+}
+
+/*
+ * Additional style rules
+ *
+ * The following are examples of colouring countries.  You can substitute these with your own styles to colour the countries on the map.
+ *
+ * Color a few countries:
+ *
+ * .gb, .au, .nc
+ * {
+ *    fill:       #ff0000;
+ * }
+ *
+ * Color a few small country circles (and the countries):
+ *
+ * .ms, .ky
+ * {
+ *    opacity:    1;
+ *    fill:       #ff0000;
+ * }
+ *
+ */
+
