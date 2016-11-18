@@ -275,7 +275,7 @@ var countryCodes = [
 var emissionData = JSON.parse(document.getElementById("rawdata").value)
 
 // color catagories (first one for missing values, then 5 catagories (low to high))
-var colors = ["000001", "bbf0d9", "fdcc8a", "fc8d59", "e34a33", "b30000"]
+var colors = ["000001", "fef0d9", "fdcc8a", "fc8d59", "e34a33", "b30000"]
 
 // merge data with country codes
 for (var i = 0; i < countryCodes.length; i++) {
@@ -289,7 +289,7 @@ for (var i = 0; i < countryCodes.length; i++) {
 	}
 }
 
-// assigns colors to emission values (i dont like the intervals so far)
+// assigns colors to emission values (intervals are logaritmic ish)
 function determineColor(emissionValue) {
 	if (emissionValue === -1.0) {
 		return colors[0]
@@ -307,7 +307,7 @@ function determineColor(emissionValue) {
 }
 
 
-// changes color on document load
+// changes color of all countries on document load
 window.onload = function() {
 	for (var i = 0; i < emissionData.length; i++) {
 		console.log(emissionData[i]);

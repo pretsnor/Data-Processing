@@ -12,7 +12,6 @@ Universiteit van Amsterdam
 main js file changing the color of some countries
 *******/
 
-
 /* use this to test out your function */
 window.onload = function() {
 	changeColor(by, "2b2b2b");
