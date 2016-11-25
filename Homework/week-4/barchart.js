@@ -15,7 +15,7 @@ data is crab measurements
 reference paper crabs: http://duch.mimuw.edu.pl/~pokar/StatystykaII/DANE/CampbellMahon.pdf
 *******/
 
-var margin = {top: 20, right: 30, bottom: 30, left: 40},
+var margin = {top: 20, right: 30, bottom: 30, left: 70},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -55,8 +55,8 @@ d3.json("crabs.json", function(data) {
 	
 	// get data domains, max height gets some extra margin
 	var extraMargin = 5;
-	x.domain(data.map(function(d) { return d.speciessex; }))  
-	y.domain([0, d3.max(data, function(d) { return d.CL; }) + extraMargin]);
+	x.domain(data.map(function(d) { return d.crabpiece; }))  
+	y.domain([0, d3.max(data, function(d) { return d.length; }) + extraMargin]);
 
 	chart.append("g")
       	.attr("class", "x axis")
@@ -65,15 +65,22 @@ d3.json("crabs.json", function(data) {
 
   	chart.append("g")
       	.attr("class", "y axis")
-      	.call(yAxis);
+      	.call(yAxis)
+      .append("text")
+	    .attr("transform", "rotate(-90)")
+	    .attr("y", -60)
+	    .attr("dy", ".71em")
+	    .style("text-anchor", "begin")
+	    .attr("dx", -250)
+	    .text("Size (mm)");
 
   	chart.selectAll(".bar")
     	.data(data)
       .enter().append("rect")
       	.attr("class", "bar")
-      	.attr("x", function(d) { return x(d.speciessex); })
-     	.attr("y", function(d) { return y(d.CL); })
-      	.attr("height", function(d) { return height - y(d.CL); })
+      	.attr("x", function(d) { return x(d.crabpiece); })
+     	.attr("y", function(d) { return y(d.length); })
+      	.attr("height", function(d) { return height - y(d.length); })
       	.attr("width", x.rangeBand())
       	// mouse over color change
      	.on("mouseover", function(d) {
