@@ -1,11 +1,48 @@
+body {
+   font-family: sans-serif;
+   background-color: #E5E5FF;
+}
+
 .bar {
-  fill: steelblue;
+  fill: orange;
 }
 
-.bar:hover {
-  fill: brown;
+.axis text {
+  font: 21px sans-serif;
 }
 
-.axis--x path {
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #aaa;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
   display: none;
 }
+
+
+.OuterWrapper {
+   width: 100%;
+}
+
+.InnerWrapper {
+   width: 70%;
+   margin: auto;
+   text-align: center;
+   background-color: rgba(255,255,255,0.8);
+}
+
+
+.textWrapper {
+   width: 80%;
+   margin: auto;
+   background-color: rgba(255,255,255,0.8);
+}
+
+p {
+   line-height: 1.5;
+   font-size: 20px;
+}
+

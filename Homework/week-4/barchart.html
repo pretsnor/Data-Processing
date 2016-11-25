@@ -3,15 +3,36 @@
 <html>
 	<head>
 		<title> Crabs Barchart </title>
+
+		<!-- d3 -->
+		<script src="//d3js.org/d3.v3.min.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="barchart.css">
 	</head>
 
 	<body>
 
-		<svg width="960" height="500"></svg>
+	<div class = "OuterWrapper">
+	<div class = "InnerWrapper">
+  		<h1> Length measurements of  <i> Leptograpsus </i> crabs</h1>
+	</div>
+	</div>
 
-		<!-- d3 -->
-		<script src="//d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+	<div class = "OuterWrapper">
+	<div class = "InnerWrapper">
+		<svg class="chart"></svg>
+	</div>
+	</div>
+
+	<div class = "OuterWrapper">
+	<div class = "InnerWrapper">
+		<img src="crab.jpg" alt="krab">
+	</div>
+	</div>
+	
+		
+
 
 		<!-- link to javascript -->
 		<script src="barchart.js"></script>
