@@ -25,7 +25,7 @@
 	<div id="container"></div>
 	</div>
 
-	<div class="OuterWrapper">
+<div class="OuterWrapper">
 <div class="InnerWrapper">
   <ul>
     <li> <div class = "legend" id = "item1"></div>No Data</li>
@@ -40,10 +40,22 @@ CO2 emissions in metric tons per capita
 </div>
 <div class = "textWrapper">
 <p>
-Bla bla
+To indicate three levels of emission (low, medium, high), a simple sequential color scale is used. On hover, the exact emission value is shown and the country
+is highlighted in green (relatively contrasting to de shades of red).  
+<br> <br>
+An additional onclick event generates arcs from the clicked country to the two countries with the most similar emission values. While you can distinguish most continents by their color (Africa generally has low emissions, europe medium), interesting arc patterns can arise. Observe for example that the two countries with 
+the most similar emission levels as the netherlands, turn out to be in asia.
 </p>
 </div>
 </div>
+<div class = "OuterWrapper">
+<div class = "textWrapper">
+<p>
+Misha Paauw (10054154). Data from <a href="http://wdi.worldbank.org/table/3.8" target="_blank"> World Bank: World Development Indicators </a>
+</p>
+</div>
+</div>
+
 
 	<textarea id="rawdata" style="display:none">
    [

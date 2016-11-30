@@ -307,7 +307,6 @@ function determineColor(emissionValue) {
 	}
 }
 
-
 // generate map
 var map = new Datamap({
   element: document.getElementById("container"),
@@ -315,7 +314,7 @@ var map = new Datamap({
   geographyConfig: {
     // Pop up 
     popupTemplate: function(geography, data) {
-      return '<div class="hoverinfo"> <strong>' + geography.properties.name + '</strong> <br> Emissions:' +  data.emission + '</div>'
+      return '<div class="hoverinfo"> <strong>' + geography.properties.name + '</strong> <br> Emissions: ' +  data.emission + '</div>'
     },
     // highlighting
     highlightBorderColor: '#bada55',
@@ -334,10 +333,7 @@ document.addEventListener('click', function(e) {
 	// start checker
 	var neg = -50
 	var pos = 40
-	var level 
-	var level2 
-	var ctry1
-	var ctry2
+	var ctry1, ctry2
 	
 	// find countries with closest emission data points
 	for (var key in data) {
@@ -346,19 +342,16 @@ document.addEventListener('click', function(e) {
 		// find closest value to one sidde
 		if (difference > 0 && difference < pos) {
 			pos = difference;
-			level = data[key].emission;
 			ctry1 = key;
 		}
 		// find closest value to the other side
 		else if (difference < 0 && difference > neg)
 		{
 			neg = difference;
-			level2 = data[key].emission;
 			ctry2 = key;
 		}	
 	}
-	console.log(pos, neg, level, level2, ctry1, ctry2) 
-
+	
 	// draw arcs from clicked country to closest countries
 	map.arc([
 	{
@@ -370,5 +363,6 @@ document.addEventListener('click', function(e) {
 		destination: ctry2
 	}])
 }, false);
+
 
  
