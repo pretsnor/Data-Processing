@@ -1,0 +1,96 @@
+/*
+* d3line.js
+* 
+* Misha Paauw
+* 10054154
+* Data Processing
+* december 2016
+*
+* css for d3 multiseries line graph
+*/ 
+
+
+.weather_canvas {	
+	border: 2px solid black;
+	background-color: #F5FAFA;
+}
+
+#crosshair {
+    cursor:none;
+    border: 0px solid red;
+    z-index: 10;
+
+    position: absolute;
+    top:20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.title {
+	border: 1px solid rgba(255,255,255,0.3);
+	background-color: rgba(255,255,255,0.3);
+}
+
+
+h1 {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+p {
+	font-size: 20px;
+	line-height: 2px;
+}
+
+img {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+
+body {
+	background-color: #769491;
+	text-align: center;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* graph stuff */
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: none;
+  stroke: orange;
+  stroke-width: 3px;
+}
+
+
+
+
+
