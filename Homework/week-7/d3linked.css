@@ -1,0 +1,154 @@
+/*******
+d3linked.css
+
+Misha Paauw
+10054154
+
+Data Processing 
+Minor Programmeren
+Universiteit van Amsterdam
+14-12-2016
+
+css styling of linked view d3 assignment
+
+********/
+
+/***
+* body
+****/
+
+body {
+   font-family: sans-serif;
+   background-color: #E5E5FF;
+   margin: 0;
+   padding: 0;
+}
+
+
+/***
+* wrappers
+****/
+
+
+.OuterWrapper {
+   width: 100%;
+   height: 100%;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.InnerWrapper {
+   width: 80%;
+   margin: auto;
+   background-color: rgba(255,255,255,0.8);
+}
+
+
+#container {
+   width: 95%
+   margin: auto;
+   height: 850px;
+   background-color: rgba(255,255,255,0.8);
+   border: 0px solid black;
+   position: relative;
+}
+
+.textWrapper {
+   width: 80%;
+   margin: auto;
+   text-align: center;
+   background-color: rgba(255,255,255,0.8);
+}
+
+#title {
+   width: 100%;
+}
+
+/***
+* text
+****/
+
+p {
+   line-height: 1.5;
+   font-size: 20px;
+   text-align: justify;
+   margin: 20px;
+}
+
+/***
+* legend
+***/
+
+ul {
+   display: inline-block;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   padding-top: 2%;
+}
+
+li {
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.legend {
+   height: 15px;
+   width: 15px;
+   border: 1px solid black;
+   margin-right: 3px;
+   float: left;
+
+}
+
+#item1 {
+   background-color: #000001;
+}
+
+#item2 {
+   background-color: #f1eef6;
+}
+
+#item3 {
+   background-color: #bdc9e1;
+}
+
+#item4 {
+   background-color: #74a9cf;
+}
+
+#item5 {
+   background-color: #0570b0;
+}
+
+/***
+* scatter plot layout
+***/
+
+.axis path,
+.axis line {
+   fill: none;
+   stroke: black;
+   stroke-width: 1px;
+   shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+  opacity: 0.5;
+}
+
+.selectedDot {
+  stroke: #000;
+}
+
+
+/***
+* dropdown
+***/
+
+optgroup {
+  font-size: 22px;
+}

@@ -1,0 +1,105 @@
+<!--
+d3linked
+
+Misha Paauw
+10054154
+
+Data Processing 
+Minor Programmeren
+Universiteit van Amsterdam
+14-12-2016
+
+html file containing the framework for d3 map of the world with a linked graph view
+-->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+	<head>
+		<title> d3 world map </title>
+
+		<!-- d3  & topoJson -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+ 		 <!-- Hi Res world map -->
+  		<script src="http://datamaps.github.io/scripts/0.5.0/datamaps.world.hires.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="d3linked.css">
+	</head>
+
+	<body>
+
+	<div class = "OuterWrapper">
+	<div class = "textWrapper" id = "title">
+  		<h1> What influences wellbeing around the world? </h1>
+	</div>
+	</div>
+
+	<div class = "OuterWrapper">
+        <div class="InnerWrapper">
+	       <div id="container" style="width: 100%"></div>
+        </div>
+	</div>
+
+<div class="OuterWrapper" >
+    <div class="textWrapper">
+      <ul>
+        <li> <div class = "legend" id = "item1"></div>No Data</li>
+        <li> <div class = "legend" id = "item2"></div>0 - 2.5</li>
+        <li> <div class = "legend" id = "item3"></div>2.5 - 5</li>
+        <li> <div class = "legend" id = "item4"></div> 5 - 7  </li>
+        <li> <div class = "legend" id = "item5"></div> > 7 </li>
+        
+      </ul>
+    </div>
+
+
+
+    <div class="textWrapper">
+        Wellbeing index
+    </div>
+</div>
+
+<div class = "OuterWrapper">
+    <div class = "InnerWrapper" id = "scatter">   
+    </div>
+</div>
+<div class = "OuterWrapper">
+    <div class = "InnerWrapper" style="overflow: auto">
+    <div style="width: 50%">    <p> Change explanatory variable here: </p> </div>
+            <div class = "dropdown" style="width: 50%; overflow: auto;">
+                <select id = "dropdown" onchange="getExplained(this)" style="margin-left: 20px;">
+                        <option value="GDP">GDP ($ / capita)</option>
+                        <option value="Life Expectancy">Life Expectancy (years)</option>
+                        <option value="HappyLifeYears">Happy Life Years (years)</option>
+                        <option value="Footprint">Ecological Footprint (gHa/person)</option>
+                </select>
+            </div>
+    </div>
+        
+</div>
+
+<div class = "OuterWrapper">
+    <div class = "textWrapper">
+        <p>
+            Not all countries around the world have an equally high standard of wellbeing for its inhabitants. Explore the variation in wellbeing on the world map shown above. You may wonder why some countries have a higher level of wellbeing than others. You can try to find correlations between wellbeing and some possible explanatory variables such as GDP, or life expectancy in the scatter plot below the map. But, remember, a correlation does not mean that there is also a causation!
+        <br> <br>
+            If you are interested in a particular country, click on that country and you'll find it highlighted in the scatter plot. Follow it around when you change variables. Do you see any interesting patterns?
+        </p>
+    </div>
+</div>
+
+<div class = "OuterWrapper">
+    <div class = "textWrapper">
+        <p>
+            Misha Paauw (10054154). Data from <a href="http://happyplanetindex.org/countries" target="_blank"> Happy Planet Index </a>
+        </p>
+    </div>
+</div>
+
+		<!-- link to javascript -->
+        <script src="countrycodes.js"></script>
+		<script src="d3linked.js"></script>
+	
+	</body>
+</html>
